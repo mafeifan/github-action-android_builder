@@ -6,9 +6,17 @@
 
 如果这篇文章帮到了你，不妨回来点个赞。
 
+## 为什么选择 GitHub Actions
+开箱即用的环境。从 GitHub 官方的虚拟环境仓库可以看到，Ubuntu 20.04 的环境中自带了 Java 11，Kotlin 1.6.0，Gradle 7.3，和 Android SDK 的常用版本。相比上面的传统方法，Ubuntu 这套环境其实已经解决了很多编译环境问题了，且合适大部分的 Android 项目的构建，如果遇到不满足的地方，下面也有方法告诉你怎么轻易地解决。
+
+足够的免费配额。GitHub Actions 对于免费的账户也是有一定的限制的，具体表现在：每个仓库的构建产物限制是 500MB，每个月的运行时长是 2000 分钟。对于我们只是构建一个普通的 Android 项目安装包来说，也够用了，运行时长也是绰绰有余。
+
+## 如何使用 GitHub Actions
+下面就通过实战来看看如何方便快捷地用 GitHub Actions 来构建一个开源 Android 项目的 APK 安装包吧。我这里选择的是 FolioReader，一个 Java 编写的 ePub 阅读器，在 GitHub 上开源并获得 2k ⭐。
+
 ## 流水线
 
-.github/workflows/build.yaml
+访问 .github/workflows/build.yaml
 
 这个 Workflow 的触发条件设置为手动触发，因为还需要一些修改才能满足目标 Android 项目的构建条件，因此没有设置为常规的基于文件改动就触发。
 
